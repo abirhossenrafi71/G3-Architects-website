@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+*{
+    box-sizing: border-box;
+  
+}
 .open-sans-font {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  margin: 0;
 }
 /* shared styles */
 .display-flex {
@@ -36,6 +42,15 @@
     padding: 19px 24px;
     transition: 0.5ms;
 
+}
+.section-title{
+    font-size: 2.8rem;
+}
+.section-description{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #727272;
+    margin-bottom: 2rem;
 }
 main{
     max-width: 1440px;
@@ -96,9 +111,7 @@ main > section{
     margin-left: 130px;
     max-width: 530px;
 }
-.features-title{
-    font-size: 2.8rem;
-}
+
 #quick-list{
     color: #727272;
     font-weight: 500;
@@ -110,11 +123,55 @@ main > section{
 #features{
     color: rgba(255, 144, 14, 1);
 }
-.features-description{
-    font-size: 1rem;
-    font-weight: 400;
-    color: #727272;
-    margin-bottom: 2rem;
+.fact-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 124px;
+}
+.fact-card{
+    border: 1px solid #FF900E;
+    border-radius: 8px;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.fact-number{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.fact-name{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.fact-title{
+    margin: 0;
+}
+.fact-description{
+    max-width: 540px;
+    margin-bottom: 100px;
+}
+
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.sponsor-title{
+    margin: 0;
+}
+.sponsor-icon{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+}
+.sponsor-icon img{
+    filter: grayscale(100%);
+
 }
 /* responsive media query */
 @media screen and (max-width: 574px) {
@@ -122,13 +179,28 @@ main > section{
     .teams{
         flex-direction: column;
     }
-    .teams-img-container{
-    display: grid;
+    .teams-img-container,
+    .fact-container,
+    .sponsor-icon{
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
     }
+    .fact-container{
+        justify-items: center;
+    }
     .our-features{
-        margin: 0 auto;
+        margin: 20px;
         text-align: center;
     }
+    .sponsor-icon{
+        justify-items: center;
+    }
+}
+@media screen and (min-width:576px) and (max-width:992px) {
+    .teams{
+        flex-direction: column;
+    }  
+    .our-features{
+        margin: 20px;
+    } 
 }
